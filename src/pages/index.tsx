@@ -1,7 +1,30 @@
-import { Container } from '../styles/pages/Home'
+import { ChallengeBox } from '@/components/ChallengeBox'
+import { CompletedChallenges } from '@/components/CompletedChallenges'
+import { Countdown } from '@/components/Countdown'
+import { ExperienceBar } from '@/components/ExperienceBar'
+import { Profile } from '@/components/Profile'
+import { SEO } from '@/components/SEO'
+
+import styles from './../styles/pages/Home.module.css'
 
 const Home: React.FC = () => {
-  return <Container></Container>
+  return (
+    <div className={styles.container}>
+      <SEO title="Home" />
+      <ExperienceBar />
+
+      <section>
+        <div>
+          <Profile />
+          <CompletedChallenges />
+          <Countdown />
+        </div>
+        <div>
+          <ChallengeBox />
+        </div>
+      </section>
+    </div>
+  )
 }
 
 export default Home

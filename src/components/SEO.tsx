@@ -1,26 +1,26 @@
-import { Head } from 'next/document'
+import Head from 'next/head'
 
 interface SEOProps {
-  title: string
-  description: string
-  image: string
-  shouldExcludeTitleSufix: boolean
-  shouldIndexPage: boolean
+  title?: string
+  description?: string
+  image?: string
+  shouldExcludeTitleSufix?: boolean
+  shouldIndexPage?: boolean
 }
 
-const SEO: React.FC<SEOProps> = ({
+export const SEO: React.FC<SEOProps> = ({
   title,
   description,
   image,
   shouldExcludeTitleSufix = false,
   shouldIndexPage = true
 }) => {
-  const pageTitle = `${title} ${!shouldExcludeTitleSufix ? '| GoFinance' : ''}`
+  const pageTitle = `${title} ${!shouldExcludeTitleSufix ? '| Moveit' : ''}`
   const pageImage = image ? `${process.env.NEXT_PUBLIC_URI}/${image}` : null
 
   return (
     <Head>
-      <title>${pageTitle}</title>
+      <title>{pageTitle}</title>
 
       {description && <meta name="description" content={description} />}
       {pageImage && <meta name="image" content={pageImage} />}
@@ -59,5 +59,3 @@ const SEO: React.FC<SEOProps> = ({
     </Head>
   )
 }
-
-export default SEO
