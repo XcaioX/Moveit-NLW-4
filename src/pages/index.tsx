@@ -1,3 +1,5 @@
+import { GetServerSideProps } from 'next'
+
 import { ChallengeBox } from '@/components/ChallengeBox'
 import { CompletedChallenges } from '@/components/CompletedChallenges'
 import { Countdown } from '@/components/Countdown'
@@ -5,7 +7,6 @@ import { ExperienceBar } from '@/components/ExperienceBar'
 import { Profile } from '@/components/Profile'
 import { SEO } from '@/components/SEO'
 import { CountdownProvider } from '@/hooks/CountdownContext'
-import { GetServerSideProps } from 'next'
 import { ChallengeContextProvider } from '@/hooks/ChallengeContext'
 
 import styles from './../styles/pages/Home.module.css'
