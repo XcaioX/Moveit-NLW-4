@@ -7,7 +7,7 @@ import { ExperienceBar } from '@/components/ExperienceBar'
 import { Profile } from '@/components/Profile'
 import { SEO } from '@/components/SEO'
 import { CountdownProvider } from '@/hooks/CountdownContext'
-import { ChallengeContextProvider } from '@/hooks/ChallengeContext'
+import { ChallengesProvider } from '@/hooks/ChallengesContext'
 
 import styles from './../styles/pages/Home.module.css'
 
@@ -23,7 +23,7 @@ const Home: React.FC<HomeProps> = ({
   level
 }) => {
   return (
-    <ChallengeContextProvider
+    <ChallengesProvider
       level={level}
       currentExperience={currentExperience}
       challengesCompleted={challengesCompleted}
@@ -45,7 +45,7 @@ const Home: React.FC<HomeProps> = ({
           </section>
         </CountdownProvider>
       </div>
-    </ChallengeContextProvider>
+    </ChallengesProvider>
   )
 }
 

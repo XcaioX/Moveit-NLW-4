@@ -6,7 +6,7 @@ import {
   useState
 } from 'react'
 
-import { ChallengeContext } from './ChallengeContext'
+import { ChallengesContext } from './ChallengesContext'
 
 type CcountdownContextData = {
   minutes: number
@@ -24,7 +24,7 @@ export const CountdownContext = createContext<CcountdownContextData>(
 let countdownTimeout: NodeJS.Timeout
 
 export const CountdownProvider: React.FC = ({ children }) => {
-  const { startNewChallenge } = useContext(ChallengeContext)
+  const { startNewChallenge } = useContext(ChallengesContext)
 
   const [time, setTime] = useState(0.1 * 60)
   const [isActive, setIsActive] = useState(false)
@@ -50,9 +50,9 @@ export const CountdownProvider: React.FC = ({ children }) => {
         setTime(time - 1)
       }, 1000)
     } else if (isActive && time === 0) {
+      startNewChallenge()
       setHasFinished(true)
       setIsActive(false)
-      startNewChallenge()
     }
   }, [isActive, time])
 

@@ -2,12 +2,12 @@ import { Button } from './Button'
 
 import styles from './../styles/components/ChallengeBox.module.css'
 import { useCallback, useContext } from 'react'
-import { ChallengeContext } from '@/hooks/ChallengeContext'
+import { ChallengesContext } from '@/hooks/ChallengesContext'
 import { CountdownContext } from '@/hooks/CountdownContext'
 
 export const ChallengeBox: React.FC = () => {
   const { activeChallenge, resetChallenge, completeChallenge } = useContext(
-    ChallengeContext
+    ChallengesContext
   )
   const { resetCountdown } = useContext(CountdownContext)
 
